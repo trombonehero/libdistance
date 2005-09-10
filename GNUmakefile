@@ -5,7 +5,7 @@
 SRCS=	levenshtein.c hamming.c bloom.c needleman_wunsch.c jaccard.c \
 	minkowski.c damerau.c
 OBJS=	levenshtein.o hamming.o bloom.o needleman_wunsch.o jaccard.o \
-	minkowski.o damerau.c
+	minkowski.o damerau.o
 
 libdistance.a: ${SRCS}
 	gcc -g -c -I. levenshtein.c
@@ -16,6 +16,7 @@ libdistance.a: ${SRCS}
 	gcc -g -c minkowski.c
 	gcc -g -c damerau.c
 	ar cq libdistance.a ${OBJS}
+	ranlib libdistance.a
 
 clean:
-	rm -f libdistance.a libdistances.so ${S_OBJS} ${OBJS} *.core
+	rm -f libdistance.a libdistances.so ${OBJS} *.core
