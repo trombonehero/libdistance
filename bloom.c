@@ -42,10 +42,8 @@
 #include <sys/types.h>
 #endif 	/* __MINGW32__ */
 
-#include <stdlib.h>
-#if defined ( __APPLE__ ) || ( __FreeBSD__ )
 #include <stdint.h>
-#endif  /* __APPLE__ || __FreeBSD__ */
+#include <stdlib.h>
 #include <string.h>
 
 #define ADLER_WINDOW		4		// in bytes
