@@ -4,7 +4,7 @@
 struct matrix {
 	char	input[255];		/* input character */
 	float	conversion[255][255];	/* conversion cost, in, out positions */
-	float	insertion[255][255];	/* cost of inserting, in, out positions */
+	float	insertion[255][255];	/* cost of inserting in any position vs what you're inserting before */
 };
 
 #ifndef max
@@ -43,5 +43,5 @@ float 	minkowski_d(const void *d1, size_t len1, const void *d2,
 /* useful shortcuts */
 #define MANHATTAN_D(d1, len1, d2, len2)				\
 	minkowski_d(d1, len1, d2, len2, 1)
-#define EUCLIAN_D(d1, len1, d2, len2)				\
+#define EUCLID_D(d1, len1, d2, len2)				\
 	minkowski_d(d1, len1, d2, len2, 2)
