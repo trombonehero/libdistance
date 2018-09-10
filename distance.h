@@ -1,4 +1,7 @@
-/*	$Id: distance.h,v 1.6 2004/11/29 22:08:23 jose Exp $ */
+/*	$Id: distance.h,v 1.7 2004/10/10 09:12:18 jose Exp $ */
+#include <sys/cdefs.h>
+
+__BEGIN_DECLS
 
 /* cost matrix for needleman-wunsch distance */
 struct matrix {
@@ -45,3 +48,5 @@ float 	minkowski_d(const void *d1, size_t len1, const void *d2,
 	minkowski_d(d1, len1, d2, len2, 1)
 #define EUCLID_D(d1, len1, d2, len2)				\
 	minkowski_d(d1, len1, d2, len2, 2)
+
+__END_DECLS
