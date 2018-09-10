@@ -3,7 +3,7 @@
 # GNU Makefile, should work on mingw and other GNU make systems.
 
 AR	?=	ar
-ARFLAGS	=	cq
+ARFLAGS	=	cr
 CFLAGS	+=	-g -fPIC
 RANLIB	?=	ranlib
 RANLIBFLAGS?=	-D
