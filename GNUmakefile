@@ -2,21 +2,27 @@
 #
 # GNU Makefile, should work on mingw and other GNU make systems.
 
+AR	?=	ar
+ARFLAGS	=	cq
+CFLAGS	+=	-g
+RANLIB	?=	ranlib
+RANLIBFLAGS?=
+
 SRCS=	levenshtein.c hamming.c bloom.c needleman_wunsch.c jaccard.c \
 	minkowski.c damerau.c
 OBJS=	levenshtein.o hamming.o bloom.o needleman_wunsch.o jaccard.o \
 	minkowski.o damerau.o
 
 libdistance.a: ${SRCS}
-	gcc -g -c -I. levenshtein.c
-	gcc -g -c hamming.c
-	gcc -g -c bloom.c
-	gcc -g -c needleman_wunsch.c
-	gcc -g -c jaccard.c
-	gcc -g -c minkowski.c
-	gcc -g -c damerau.c
-	ar cq libdistance.a ${OBJS}
-	ranlib libdistance.a
+	${CC} ${CFLAGS} -c -I. levenshtein.c
+	${CC} ${CFLAGS} -c hamming.c
+	${CC} ${CFLAGS} -c bloom.c
+	${CC} ${CFLAGS} -c needleman_wunsch.c
+	${CC} ${CFLAGS} -c jaccard.c
+	${CC} ${CFLAGS} -c minkowski.c
+	${CC} ${CFLAGS} -c damerau.c
+	${AR} ${ARFLAGS} libdistance.a ${OBJS}
+	${RANLIB} ${RANLIBFLAGS} libdistance.a
 
 clean:
-	rm -f libdistance.a libdistances.so ${OBJS} *.core
+	${RM} libdistance.a libdistances.so ${OBJS} *.core
