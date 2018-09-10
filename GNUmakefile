@@ -3,10 +3,8 @@
 # GNU Makefile, should work on mingw and other GNU make systems.
 
 AR	?=	ar
-ARFLAGS	=	cr
+ARFLAGS	=	crs
 CFLAGS	+=	-g -fPIC
-RANLIB	?=	ranlib
-RANLIBFLAGS?=	-D
 
 SRCS=	levenshtein.c hamming.c bloom.c needleman_wunsch.c jaccard.c \
 	minkowski.c damerau.c
@@ -22,7 +20,6 @@ libdistance.a: ${SRCS}
 	${CC} ${CFLAGS} -c minkowski.c
 	${CC} ${CFLAGS} -c damerau.c
 	${AR} ${ARFLAGS} libdistance.a ${OBJS}
-	${RANLIB} ${RANLIBFLAGS} libdistance.a
 
 clean:
 	${RM} libdistance.a libdistances.so ${OBJS} *.core
