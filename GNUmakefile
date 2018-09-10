@@ -4,9 +4,9 @@
 
 AR	?=	ar
 ARFLAGS	=	cq
-CFLAGS	+=	-g
+CFLAGS	+=	-g -fPIC
 RANLIB	?=	ranlib
-RANLIBFLAGS?=
+RANLIBFLAGS?=	-D
 
 SRCS=	levenshtein.c hamming.c bloom.c needleman_wunsch.c jaccard.c \
 	minkowski.c damerau.c
