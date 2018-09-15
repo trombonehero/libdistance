@@ -8,6 +8,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #ifdef __Darwin__
 #include <stdint.h>
 #endif				/* __Darwin__ */
@@ -75,7 +76,7 @@ test_ld(void)
 	printf("levenshtein_d is %d ", l);
 	test_int_result(2, l);
 
-	printf("strlen of s is %d, strlen of t is %d\n", strlen(l1), strlen(l2));
+	printf("strlen of s is %lu, strlen of t is %lu\n", strlen(l1), strlen(l2));
 	
 	return;
 }
