@@ -21,7 +21,8 @@ float
 minkowski_d(const void *d1, size_t len1, const void *d2, size_t len2, 
 	    int power)
 {
-	int             k, i, j, n, m, cost, *d, distance, a, b, c;
+	int             k, i, j, n, m, *d, distance;
+    float           cost, a, b, c;
 	char           *s, *t;
 
 	//Step 1
@@ -42,16 +43,16 @@ minkowski_d(const void *d1, size_t len1, const void *d2, size_t len2,
 			for (i = 1; i < n; i++)
 				for (j = 1; j < m; j++) {
 					//Step 5
-#define COST_UNQUAL pow(fabs(s[i - 1] - t[j - 1]), power)
+#define COST_UNQUAL powf(abs(s[i - 1] - t[j - 1]), power)
 					if (s[i - 1] == t[j - 1])
-						cost = 0;
+						cost = 0.0;
 					else
 						cost = COST_UNQUAL;
 					//Step 6
 					a = d[(j - 1) * n + i] + COST_UNQUAL;
 					b = d[j * n + i - 1] + COST_UNQUAL;
 					c = d[(j - 1) * n + i - 1] + cost;
-					d[j * n + i] = (min(a,(min(b,c))));
+					d[j * n + i] = (fminf(a,(fminf(b,c))));
 				}
 			distance = d[n * m - 1];
 		free(d);
