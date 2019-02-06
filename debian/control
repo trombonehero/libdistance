@@ -1,0 +1,19 @@
+Source: libdistance
+Priority: optional
+Maintainer: Jonathan Anderson <jonathan.anderson@mun.ca>
+Build-Depends: debhelper (>= 10)
+Standards-Version: 4.1.2
+Section: libs
+Homepage: https://github.com/paralax/libdistance
+Vcs-Git: https://github.com/paralax/libdistance
+
+Package: libdistance-dev
+Section: libdevel
+Architecture: any
+Multi-Arch: no
+Description: Development files for libdistance
+ The distance library is used to compare pieces of data for similarity.
+ Specifically, it contains a number of methods to find the "edit distance"
+ between inputs, or the number of differences between them. These
+ differences are calculated using various mechanisms. The inputs to these
+ functions can be character strings or arbitrary data.
