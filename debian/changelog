@@ -1,3 +1,9 @@
+libdistance (0.2.3-3) bionic; urgency=medium
+
+  * Fix dependencies: there is no shared-library package
+
+ -- Jonathan Anderson <jonathan.anderson@mun.ca>  Wed, 06 Feb 2019 19:36:00 -0330
+
 libdistance (0.2.3-2) bionic; urgency=medium
 
   * Add manual page

@@ -11,7 +11,6 @@ Package: libdistance-dev
 Section: libdevel
 Architecture: any
 Multi-Arch: no
-Depends: libdistance (= ${binary:Version}), ${misc:Depends}
 Description: Development files for libdistance
  The distance library is used to compare pieces of data for similarity.
  Specifically, it contains a number of methods to find the "edit distance"
